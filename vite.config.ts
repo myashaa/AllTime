@@ -1,7 +1,7 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-import eslint from 'vite-plugin-eslint'
-import stylelint from 'vite-plugin-stylelint'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import eslint from 'vite-plugin-eslint';
+import stylelint from 'vite-plugin-stylelint';
 
 const lintConfig = {
   cache: false,
@@ -25,4 +25,4 @@ export default defineConfig({
       include: ['src/**/*.css'],
     }),
   ],
-})
+});
