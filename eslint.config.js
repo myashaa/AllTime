@@ -6,6 +6,7 @@ import prettier from 'eslint-config-prettier';
 import prettierPlugin from 'eslint-plugin-prettier';
 import reactHooksPlugin from 'eslint-plugin-react-hooks';
 import reactRefreshPlugin from 'eslint-plugin-react-refresh';
+import importPlugin from 'eslint-plugin-import';
 
 export default ts.config([
   globalIgnores(['dist', 'node_modules']),
@@ -17,6 +18,7 @@ export default ts.config([
     },
     plugins: {
       prettier: prettierPlugin,
+      import: importPlugin,
     },
     extends: [js.configs.recommended, ts.configs.recommended, prettier],
     rules: {
@@ -25,6 +27,7 @@ export default ts.config([
       '@typescript-eslint/ban-ts-comment': 'warn',
       'no-console': ['warn', { allow: ['warn', 'error'] }],
       'prettier/prettier': ['warn', { usePrettierrc: true }],
+      'import/no-relative-parent-imports': 'error',
     },
   },
   {
