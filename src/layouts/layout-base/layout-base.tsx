@@ -1,17 +1,22 @@
 import { ReactElement } from 'react';
+import { Layout } from 'antd';
+import Header from '~/components/header/header';
+import Footer from '~/components/footer/footer';
+import Main from '~/components/main/main';
 
 import styles from './layout-base.module.css';
 
 type LayoutBaseProps = {
-  title?: string;
+  title: string;
   children: ReactElement;
 };
 
 export default function LayoutBase({ title, children }: LayoutBaseProps) {
   return (
-    <div className={styles.wrapper}>
-      <h1>{title}</h1>
-      {children}
-    </div>
+    <Layout className={styles.layout}>
+      <Header />
+      <Main title={title} children={children} />
+      <Footer />
+    </Layout>
   );
 }
