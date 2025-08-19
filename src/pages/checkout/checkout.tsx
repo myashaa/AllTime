@@ -6,7 +6,7 @@ export default function Checkout() {
   return (
     <LayoutBase title="Оформления заказа">
       <div>Текст</div>
-      <Link to={APP_ROUTE.Home}>на главную</Link>
+      <Link to={APP_ROUTE.Home}>Вернуться на главную</Link>
     </LayoutBase>
   );
 }
