@@ -1,5 +1,5 @@
 import { ReactElement } from 'react';
-import { Layout, Typography } from 'antd';
+import { Flex, Layout, Typography } from 'antd';
 
 import styles from './main.module.css';
 
@@ -14,10 +14,12 @@ function Main({ title, children }: MainProps) {
 
   return (
     <Content className={styles.main}>
-      <Title level={1} className={styles.visuallyHidden}>
-        {title}
-      </Title>
-      {children}
+      <Flex vertical className={styles.wrapper}>
+        <Title level={1} className={styles.visuallyHidden}>
+          {title}
+        </Title>
+        {children}
+      </Flex>
     </Content>
   );
 }
