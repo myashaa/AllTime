@@ -1,11 +1,11 @@
-import { ReactElement, useEffect } from 'react';
+import { ReactElement } from 'react';
 import { Layout } from 'antd';
 import Header from '~/components/header/header';
 import Footer from '~/components/footer/footer';
 import Main from '~/components/main/main';
-import { APP_CONFIG } from '~/const/app';
+import useUpdateDocumentTitle from '~/hooks/use-update-document-title';
 
-import styles from './layout-base.module.css';
+import styles from '~/layouts/layout.module.css';
 
 type LayoutBaseProps = {
   title: string;
@@ -13,9 +13,7 @@ type LayoutBaseProps = {
 };
 
 export default function LayoutBase({ title, children }: LayoutBaseProps) {
-  useEffect(() => {
-    document.title = `${title} | ${APP_CONFIG.DESCRIPTION}`;
-  }, [title]);
+  useUpdateDocumentTitle(title);
 
   return (
     <Layout className={styles.layout}>

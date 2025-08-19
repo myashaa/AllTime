@@ -1,5 +1,5 @@
 import { Link } from 'react-router';
-import LayoutBase from '~/layouts/layout-base/layout-base';
+import LayoutBase from '~/layouts/base/base';
 import { APP_ROUTE } from '~/const/route/app-route';
 
 export default function ProductDetails() {
