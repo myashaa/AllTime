@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router';
-import { AppRoute } from '~/const/route/app-route';
+import { APP_ROUTE } from '~/const/route/app-route';
 import Home from '~/pages/home/home';
 import ProductDetails from '~/pages/product-details/product-details';
 import NotFound from '~/pages/not-found/not-found';
@@ -11,11 +11,11 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route index element={<Home />} />
-        <Route path={AppRoute.ProductDetails} element={<ProductDetails />} />
-        <Route path={AppRoute.Cart} element={<Cart />} />
-        <Route path={AppRoute.Checkout} element={<Checkout />} />
-        <Route path={AppRoute.NotFound} element={<NotFound />} />
-        <Route path={AppRoute.Others} element={<Navigate to={AppRoute.NotFound} replace />} />
+        <Route path={APP_ROUTE.ProductDetails} element={<ProductDetails />} />
+        <Route path={APP_ROUTE.Cart} element={<Cart />} />
+        <Route path={APP_ROUTE.Checkout} element={<Checkout />} />
+        <Route path={APP_ROUTE.NotFound} element={<NotFound />} />
+        <Route path={APP_ROUTE.Others} element={<Navigate to={APP_ROUTE.NotFound} replace />} />
       </Routes>
     </BrowserRouter>
   );

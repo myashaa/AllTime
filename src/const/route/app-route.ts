@@ -1,4 +1,4 @@
-export enum AppRoute {
+export enum APP_ROUTE {
   Home = '/',
   ProductDetails = '/details',
   Cart = '/cart',

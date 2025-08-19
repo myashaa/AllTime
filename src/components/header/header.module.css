@@ -1,0 +1,28 @@
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logoLink {
+  width: 156px;
+  height: 45px;
+  overflow: hidden;
+}
+
+.logo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: left;
+  transition: opacity 0.2s;
+}
+
+.logo:hover {
+  opacity: 0.8;
+}
+
+@media (width <= 768px) {
+  .logoLink {
+    width: 45px;
+  }
+}
