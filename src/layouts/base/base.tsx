@@ -5,7 +5,7 @@ import Footer from '~/components/footer/footer';
 import Main from '~/components/main/main';
 import { APP_CONFIG } from '~/const/app';
 
-import styles from './layout-base.module.css';
+import styles from './base.module.css';
 
 type LayoutBaseProps = {
   title: string;
