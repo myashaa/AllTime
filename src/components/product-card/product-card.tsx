@@ -2,14 +2,16 @@ import { Link } from 'react-router';
 import { Button, Card, Flex, Image, Typography } from 'antd';
 import { ShoppingCartOutlined } from '@ant-design/icons';
 import { AppRoute } from '~/const/route/app-route';
-import { CATALOG } from '~/const/mock';
+import type { Product } from '~/const/mock';
 
 import styles from './product-card.module.css';
 
-function ProductCard() {
-  const { Text, Paragraph, Title } = Typography;
+type ProductCardProps = {
+  product: Product;
+};
 
-  const product = CATALOG[0];
+function ProductCard({ product }: ProductCardProps) {
+  const { Text, Paragraph, Title } = Typography;
 
   const handleButtonClick = () => {
     // TODO: добавить логику
@@ -19,7 +21,7 @@ function ProductCard() {
     <Card className={styles.card}>
       <Flex vertical align="center">
         <div className={styles.imageWrapper}>
-          <Image src={product.image} alt={`изображение часов ${product.name}`} />
+          <Image src={product.image} alt={`изображение часов ${product.name}`} height={300} />
         </div>
 
         <Link to={AppRoute.ProductDetails}>
