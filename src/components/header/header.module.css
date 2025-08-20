@@ -21,6 +21,12 @@
   opacity: 0.8;
 }
 
+@media (width <= 1300px) {
+  .wrapper {
+    max-width: 900px;
+  }
+}
+
 @media (width <= 768px) {
   .logoLink {
     width: 45px;
