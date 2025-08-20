@@ -24,7 +24,7 @@ function ProductCard({ product }: ProductCardProps) {
           <Image src={product.image} alt={`изображение часов ${product.name}`} height={300} />
         </div>
 
-        <Link to={AppRoute.ProductDetails}>
+        <Link to={`${AppRoute.ProductDetails}/${product.id}`}>
           <Title level={2} className={styles.title}>
             {product.name}
           </Title>

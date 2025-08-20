@@ -6,3 +6,7 @@ export enum AppRoute {
   NotFound = '/error',
   Others = '*',
 }
+
+export enum AppRouteParams {
+  ProductId = ':productId',
+}
