@@ -4,6 +4,10 @@ export const THEME = {
       headerBg: '#fff',
       footerBg: '#fff',
     },
+    Badge: {
+      colorError: '#ff4757',
+      colorErrorHover: '#ff6b79',
+    },
   },
   token: {
     colorPrimary: '#007fbb',
