@@ -1,12 +1,12 @@
 import { Link } from 'react-router';
 import LayoutBase from '~/layouts/base/base';
-import { APP_ROUTE } from '~/const/route/app-route';
+import { AppRoute } from '~/const/route/app-route';
 
 export default function Home() {
   return (
     <LayoutBase title="Главная">
       <div>Текст</div>
-      <Link to={APP_ROUTE.ProductDetails}>Товар</Link>
+      <Link to={AppRoute.ProductDetails}>Товар</Link>
     </LayoutBase>
   );
 }
