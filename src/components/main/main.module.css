@@ -17,3 +17,9 @@
   white-space: nowrap;
   border: 0;
 }
+
+@media (width <= 1300px) {
+  .wrapper {
+    max-width: 900px;
+  }
+}

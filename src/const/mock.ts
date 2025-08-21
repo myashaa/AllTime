@@ -1,18 +1,26 @@
-export type Product = {
+export type ProductData = {
   id: number;
   name: string;
   description: string;
   price: number;
   image: string;
+  article: string;
+  country: string;
+  gender: string;
+  typeOfMechanism: string;
 };
 
-export const CATALOG: Product[] = [
+export const CATALOG: ProductData[] = [
   {
     id: 1,
     name: 'Rolex Submariner',
     description: 'Легендарные дайверские часы с автоподзаводом. Водонепроницаемость 300м, керамический безель.',
     price: 45000,
     image: 'https://static.alltime.ru/obj/catalog/watch/slava/img/normal2020/2800900-300-2409.jpg',
+    article: 'ROLEX-SUB-001',
+    country: 'Швейцария',
+    gender: 'Мужские',
+    typeOfMechanism: 'Автоматический',
   },
   {
     id: 2,
@@ -20,6 +28,10 @@ export const CATALOG: Product[] = [
     description: 'Знаменитые «лунные» часы, первые побывавшие на Луне. Хронограф, ручной завод.',
     price: 32000,
     image: 'https://static.alltime.ru/obj/catalog/watch/seiko/img/normal2020/SPB103.jpg',
+    article: 'OMEGA-SPEED-002',
+    country: 'Швейцария',
+    gender: 'Мужские',
+    typeOfMechanism: 'Механический с ручным заводом',
   },
   {
     id: 3,
@@ -27,6 +39,10 @@ export const CATALOG: Product[] = [
     description: 'Сверхпрочные цифровые часы с ударопрочным корпусом. 20-ти бар водонепроницаемость.',
     price: 15000,
     image: 'https://static.alltime.ru/obj/catalog/watch/maserati/img/normal2020/R8823118010.jpg',
+    article: 'CASIO-GSH-003',
+    country: 'Япония',
+    gender: 'Унисекс',
+    typeOfMechanism: 'Кварцевый',
   },
   {
     id: 4,
@@ -34,6 +50,10 @@ export const CATALOG: Product[] = [
     description: 'Японские механические часы с сапфировым стеклом. Классический дизайн с открытой задней крышкой.',
     price: 85000,
     image: 'https://static.alltime.ru/obj/catalog/watch/agelocer/img/normal2020/5815A5-R.jpg',
+    article: 'SEIKO-PRES-004',
+    country: 'Япония',
+    gender: 'Мужские',
+    typeOfMechanism: 'Автоматический',
   },
   {
     id: 5,
@@ -41,5 +61,86 @@ export const CATALOG: Product[] = [
     description: 'Умные часы с функцией ECG и отслеживанием активности. Always-On дисплей, iOS интеграция.',
     price: 26000,
     image: 'https://static.alltime.ru/obj/catalog/watch/rodania/img/normal2020/R18053.jpg',
+    article: 'APPLE-W9-005',
+    country: 'США',
+    gender: 'Унисекс',
+    typeOfMechanism: 'Электронный',
+  },
+  {
+    id: 6,
+    name: 'Tissot Le Locle',
+    description: 'Элегантные швейцарские часы с автоподзаводом. Классический дизайн, сапфировое стекло.',
+    price: 28000,
+    image: 'https://static.alltime.ru/obj/catalog/watch/titoni/img/normal2020/83188-S-575.jpg',
+    article: 'TISSOT-LL-006',
+    country: 'Швейцария',
+    gender: 'Мужские',
+    typeOfMechanism: 'Автоматический',
+  },
+  {
+    id: 7,
+    name: 'Cartier Tank',
+    description: 'Икона стиля ар-деко. Кварцевый механизм, прямоугольный корпус, римские цифры.',
+    price: 92000,
+    image: 'https://static.alltime.ru/obj/catalog/watch/longines/img/normal2020/L5-200-4-75-5.jpg',
+    article: 'CARTIER-TANK-007',
+    country: 'Франция',
+    gender: 'Женские',
+    typeOfMechanism: 'Кварцевый',
+  },
+  {
+    id: 8,
+    name: 'Orient Bambino',
+    description: 'Бюджетные механические часы с классическим дизайном. Автоподзавод, кожаный ремешок.',
+    price: 12000,
+    image: 'https://static.alltime.ru/obj/catalog/watch/raymondweil/img/normal2020/2780-STC-52001.jpg',
+    article: 'ORIENT-BAM-008',
+    country: 'Япония',
+    gender: 'Мужские',
+    typeOfMechanism: 'Автоматический',
+  },
+  {
+    id: 9,
+    name: 'Patek Philippe Nautilus',
+    description: 'Элитные часы с автоматическим механизмом. Стальной корпус, фирменный дизайн безеля.',
+    price: 145000,
+    image: 'https://static.alltime.ru/obj/catalog/watch/tagheuer/img/normal2020/WBN2316-BA0001.jpg',
+    article: 'PATEK-NAUT-009',
+    country: 'Швейцария',
+    gender: 'Мужские',
+    typeOfMechanism: 'Автоматический',
+  },
+  {
+    id: 10,
+    name: 'Breitling Navitimer',
+    description: 'Авиационные часы со встроенным хронографом и логарифмической линейкой. Легенда авиации.',
+    price: 78000,
+    image: 'https://static.alltime.ru/obj/catalog/watch/rado/img/normal2020/R32105313.jpg',
+    article: 'BREITLING-NAV-010',
+    country: 'Швейцария',
+    gender: 'Мужские',
+    typeOfMechanism: 'Автоматический',
+  },
+  {
+    id: 11,
+    name: 'Rado True Thinline',
+    description: 'Ультратонкие керамические часы. Высокотехнологичная керамика, устойчивая к царапинам.',
+    price: 42000,
+    image: 'https://static.alltime.ru/obj/catalog/watch/longines/img/normal2020/L4-523-0-60-2.jpg',
+    article: 'RADO-THIN-011',
+    country: 'Швейцария',
+    gender: 'Унисекс',
+    typeOfMechanism: 'Кварцевый',
+  },
+  {
+    id: 12,
+    name: 'Swatch Sistem51',
+    description: 'Инновационные механические часы всего с 51 деталью. Автоподзавод, 90 часов запаса хода.',
+    price: 8500,
+    image: 'https://static.alltime.ru/obj/catalog/watch/ml/img/normal2020/AI2008-70070-300-0.jpg',
+    article: 'SWATCH-S51-012',
+    country: 'Швейцария',
+    gender: 'Унисекс',
+    typeOfMechanism: 'Автоматический',
   },
 ];

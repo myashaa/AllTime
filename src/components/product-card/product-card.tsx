@@ -1,17 +1,23 @@
-import { Link } from 'react-router';
+import { useNavigate } from 'react-router';
 import { Button, Card, Flex, Image, Typography } from 'antd';
 import { ShoppingCartOutlined } from '@ant-design/icons';
 import { AppRoute } from '~/const/route/app-route';
-import type { Product } from '~/const/mock';
+import type { ProductData } from '~/const/mock';
 
 import styles from './product-card.module.css';
 
 type ProductCardProps = {
-  product: Product;
+  product: ProductData;
 };
 
 function ProductCard({ product }: ProductCardProps) {
   const { Text, Paragraph, Title } = Typography;
+  const navigate = useNavigate();
+
+  const handleTitleClick = () => {
+    navigate(`${AppRoute.ProductDetails}/${product.id}`);
+    window.scrollTo(0, 0);
+  };
 
   const handleButtonClick = () => {
     // TODO: добавить логику
@@ -24,11 +30,11 @@ function ProductCard({ product }: ProductCardProps) {
           <Image src={product.image} alt={`изображение часов ${product.name}`} height={300} />
         </div>
 
-        <Link to={AppRoute.ProductDetails}>
+        <div onClick={handleTitleClick}>
           <Title level={2} className={styles.title}>
             {product.name}
           </Title>
-        </Link>
+        </div>
 
         <Paragraph type="secondary" className={styles.description}>
           {product.description}

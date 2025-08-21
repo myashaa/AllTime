@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router';
-import { AppRoute } from '~/const/route/app-route';
+import { AppRoute, AppRouteParams } from '~/const/route/app-route';
 import Home from '~/pages/home/home';
 import ProductDetails from '~/pages/product-details/product-details';
 import NotFound from '~/pages/not-found/not-found';
@@ -11,7 +11,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route index element={<Home />} />
-        <Route path={AppRoute.ProductDetails} element={<ProductDetails />} />
+        <Route path={`${AppRoute.ProductDetails}/${AppRouteParams.ProductId}`} element={<ProductDetails />} />
         <Route path={AppRoute.Cart} element={<Cart />} />
         <Route path={AppRoute.Checkout} element={<Checkout />} />
         <Route path={AppRoute.NotFound} element={<NotFound />} />
