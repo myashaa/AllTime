@@ -19,22 +19,21 @@ function ProductCard({ product }: ProductCardProps) {
     window.scrollTo(0, 0);
   };
 
-  const handleButtonClick = () => {
+  const handleButtonClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
     // TODO: добавить логику
   };
 
   return (
-    <Card className={styles.card}>
+    <Card className={styles.card} onClick={handleTitleClick}>
       <Flex vertical align="center">
         <div className={styles.imageWrapper}>
-          <Image src={product.image} alt={`изображение часов ${product.name}`} height={300} />
+          <Image src={product.image} alt={`изображение часов ${product.name}`} preview={false} height={270} />
         </div>
 
-        <div onClick={handleTitleClick}>
-          <Title level={2} className={styles.title}>
-            {product.name}
-          </Title>
-        </div>
+        <Title level={2} className={styles.title}>
+          {product.name}
+        </Title>
 
         <Paragraph type="secondary" className={styles.description}>
           {product.description}

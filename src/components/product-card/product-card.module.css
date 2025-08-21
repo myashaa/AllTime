@@ -1,6 +1,7 @@
 .card {
-  width: 285px;
-  padding: 12px;
+  width: 260px;
+  padding: 8px;
+  cursor: pointer;
   border-radius: 16px;
   box-shadow: 0 4px 20px rgb(0 0 0 / 8%);
   transition: all 0.3s ease;
@@ -31,13 +32,8 @@
   font-size: 18px;
   font-weight: 700;
   text-align: center;
-  cursor: pointer;
   transition: color 0.2s ease;
   -webkit-box-orient: vertical;
-}
-
-.title:hover {
-  color: #007fbb;
 }
 
 .description {
@@ -54,7 +50,7 @@
 }
 
 .price {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 700;
   letter-spacing: -0.5px;
 }
