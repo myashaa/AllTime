@@ -13,7 +13,6 @@ export default function ProductDetails() {
   return (
     <LayoutBase title="Детальная">
       <BackLink />
-
       {product ? <Product data={product} /> : <EmptyContent description="Товар не найден" />}
     </LayoutBase>
   );
