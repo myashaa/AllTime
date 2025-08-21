@@ -1,4 +1,4 @@
-import { Button, Card, Flex, Image, Typography, Tag } from 'antd';
+import { Button, Card, Flex, Image, Typography, Tag, Divider } from 'antd';
 import { ShoppingCartOutlined } from '@ant-design/icons';
 import type { ProductData } from '~/const/mock';
 
@@ -37,6 +37,8 @@ export default function Product({ data }: ProductProps) {
             </Flex>
 
             <Paragraph className={styles.description}>{data.description}</Paragraph>
+
+            <Divider />
 
             <Flex justify="space-between" align="center" className={styles.priceWrapper}>
               <Text className={styles.price}>
