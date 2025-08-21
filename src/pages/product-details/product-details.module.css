@@ -1,3 +1,28 @@
 .wrapper {
   height: 50vh;
 }
+
+.backLink {
+  display: inline-flex;
+  gap: 8px;
+  padding: 8px 0;
+  transition: all 0.3s ease;
+}
+
+.backLink:hover {
+  transform: translateX(-4px);
+}
+
+.backIcon {
+  color: inherit;
+  transition: transform 0.3s ease;
+}
+
+.backLink:hover .backIcon {
+  transform: translateX(-2px);
+}
+
+.backText {
+  font-weight: 500;
+  color: inherit;
+}
