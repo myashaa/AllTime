@@ -8,7 +8,7 @@ type MainProps = {
   children: ReactElement;
 };
 
-function Main({ title, children }: MainProps) {
+export default function Main({ title, children }: MainProps) {
   const { Content } = Layout;
   const { Title } = Typography;
 
@@ -23,5 +23,3 @@ function Main({ title, children }: MainProps) {
     </Content>
   );
 }
-
-export default Main;

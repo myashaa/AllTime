@@ -7,7 +7,7 @@ import LangSwitcher from '~/components/lang-switcher/lang-switcher';
 
 import styles from './header.module.css';
 
-function Header() {
+export default function Header() {
   const { Header } = Layout;
 
   const cartCount = 10;
@@ -33,5 +33,3 @@ function Header() {
     </Header>
   );
 }
-
-export default Header;

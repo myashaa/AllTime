@@ -1,7 +1,7 @@
 import { Flex, Layout, Typography } from 'antd';
 import { AppConfig } from '~/const/app';
 
-function Footer() {
+export default function Footer() {
   const { Footer } = Layout;
   const { Text } = Typography;
 
@@ -15,5 +15,3 @@ function Footer() {
     </Footer>
   );
 }
-
-export default Footer;

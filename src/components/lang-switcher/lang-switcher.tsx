@@ -4,7 +4,7 @@ import { LANGS } from '~/const/langs';
 
 import styles from './lang-switcher.module.css';
 
-function LangSwitcher() {
+export default function LangSwitcher() {
   const [lang, setLang] = useState<string>('ru');
 
   return (
@@ -24,5 +24,3 @@ function LangSwitcher() {
     </Flex>
   );
 }
-
-export default LangSwitcher;

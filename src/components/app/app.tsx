@@ -6,7 +6,7 @@ import NotFound from '~/pages/not-found/not-found';
 import Cart from '~/pages/cart/cart';
 import Checkout from '~/pages/checkout/checkout';
 
-function App() {
+export default function App() {
   return (
     <BrowserRouter>
       <Routes>
@@ -20,5 +20,3 @@ function App() {
     </BrowserRouter>
   );
 }
-
-export default App;
