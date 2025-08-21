@@ -1,5 +1,5 @@
 import { Link, useParams } from 'react-router';
-import { Flex, Typography } from 'antd';
+import { Empty, Flex, Typography } from 'antd';
 import { LeftOutlined } from '@ant-design/icons';
 import LayoutBase from '~/layouts/base/base';
 import { CATALOG } from '~/const/mock';
@@ -25,7 +25,7 @@ export default function ProductDetails() {
         <Product data={product} />
       ) : (
         <Flex vertical justify="center" align="center" className={styles.wrapper}>
-          <Text>Товар не найден</Text>
+          <Empty description="Товар не найден" image={Empty.PRESENTED_IMAGE_SIMPLE} />
         </Flex>
       )}
     </LayoutBase>
