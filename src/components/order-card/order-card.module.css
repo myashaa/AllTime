@@ -1,0 +1,20 @@
+.card {
+  flex: 1;
+}
+
+.card .title {
+  margin-bottom: 18px;
+  font-size: 18px;
+}
+
+.productName {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  font-weight: 600;
+}
+
+.productPrice {
+  min-width: 50px;
+}
