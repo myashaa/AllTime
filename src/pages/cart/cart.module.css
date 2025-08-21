@@ -1,0 +1,31 @@
+.wrapper {
+  padding: 24px;
+}
+
+.totalPrice {
+  font-size: 18px;
+  color: #007fbb;
+}
+
+.button {
+  height: 48px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 0;
+  border-radius: 16px;
+  transition: all 0.2s ease;
+}
+
+.button:hover {
+  transform: translateY(-1px);
+}
+
+.button:active {
+  transform: translateY(0);
+}
+
+@media (width <= 1300px) {
+  .wrapper {
+    padding: 24px 0;
+  }
+}

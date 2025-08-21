@@ -1,0 +1,55 @@
+.info {
+  flex: 1;
+}
+
+.card .title {
+  margin: 0;
+  font-size: 16px;
+}
+
+.imageWrapper {
+  flex-shrink: 0;
+  width: 65px;
+  height: 80px;
+  overflow: hidden;
+}
+
+.imageWrapper > div {
+  width: inherit;
+  height: inherit;
+}
+
+.imageWrapper img {
+  object-fit: cover;
+  object-position: center;
+}
+
+.quantity {
+  min-width: 40px;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+}
+
+@media (width <= 600px) {
+  .imageWrapper {
+    width: 90px;
+    height: 120px;
+  }
+
+  .info {
+    flex-direction: column;
+  }
+}
+
+@media (width <= 435px) {
+  .card {
+    flex-direction: column;
+  }
+
+  .imageWrapper {
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+  }
+}

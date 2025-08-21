@@ -8,7 +8,7 @@ type ProductProps = {
   data: ProductData;
 };
 
-function Product({ data }: ProductProps) {
+export default function Product({ data }: ProductProps) {
   const { Text, Paragraph, Title } = Typography;
 
   const handleButtonClick = () => {
@@ -63,5 +63,3 @@ function Product({ data }: ProductProps) {
     </>
   );
 }
-
-export default Product;

@@ -10,7 +10,7 @@ type ProductCardProps = {
   product: ProductData;
 };
 
-function ProductCard({ product }: ProductCardProps) {
+export default function ProductCard({ product }: ProductCardProps) {
   const { Text, Paragraph, Title } = Typography;
   const navigate = useNavigate();
 
@@ -58,5 +58,3 @@ function ProductCard({ product }: ProductCardProps) {
     </Card>
   );
 }
-
-export default ProductCard;

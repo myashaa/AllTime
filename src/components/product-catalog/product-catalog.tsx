@@ -6,7 +6,7 @@ type ProductCatalogProps = {
   products: ProductData[];
 };
 
-function ProductCatalog({ products }: ProductCatalogProps) {
+export default function ProductCatalog({ products }: ProductCatalogProps) {
   return (
     <Flex gap={20} wrap justify="center">
       {products.map((p) => (
@@ -15,5 +15,3 @@ function ProductCatalog({ products }: ProductCatalogProps) {
     </Flex>
   );
 }
-
-export default ProductCatalog;
