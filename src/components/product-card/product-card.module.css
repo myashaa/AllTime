@@ -14,14 +14,11 @@
 
 .imageWrapper {
   margin-bottom: 16px;
-  overflow: hidden;
-  border-radius: 12px;
 }
 
 .imageWrapper img {
   object-fit: cover;
   object-position: center;
-  border: 6px solid #fff;
 }
 
 .card .title {
