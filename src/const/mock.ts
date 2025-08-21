@@ -1,4 +1,4 @@
-export type Product = {
+export type ProductData = {
   id: number;
   name: string;
   description: string;
@@ -10,7 +10,7 @@ export type Product = {
   typeOfMechanism: string;
 };
 
-export const CATALOG: Product[] = [
+export const CATALOG: ProductData[] = [
   {
     id: 1,
     name: 'Rolex Submariner',

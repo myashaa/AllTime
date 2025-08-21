@@ -2,12 +2,12 @@ import { Link } from 'react-router';
 import { Button, Card, Flex, Image, Typography } from 'antd';
 import { ShoppingCartOutlined } from '@ant-design/icons';
 import { AppRoute } from '~/const/route/app-route';
-import type { Product } from '~/const/mock';
+import type { ProductData } from '~/const/mock';
 
 import styles from './product-card.module.css';
 
 type ProductCardProps = {
-  product: Product;
+  product: ProductData;
 };
 
 function ProductCard({ product }: ProductCardProps) {
