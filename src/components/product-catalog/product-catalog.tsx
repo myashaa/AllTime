@@ -1,11 +1,15 @@
 import { Flex } from 'antd';
-import { CATALOG } from '~/const/mock';
+import type { ProductData } from '~/const/mock';
 import ProductCard from '~/components/product-card/product-card';
 
-function ProductCatalog() {
+type ProductCatalogProps = {
+  products: ProductData[];
+};
+
+function ProductCatalog({ products }: ProductCatalogProps) {
   return (
     <Flex gap={20} wrap justify="center">
-      {CATALOG.map((p) => (
+      {products.map((p) => (
         <ProductCard key={p.id} product={p} />
       ))}
     </Flex>
