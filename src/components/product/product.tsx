@@ -18,13 +18,15 @@ export default function Product({ data }: ProductProps) {
   return (
     <>
       <Flex gap={48} justify="space-between" className={styles.wrapper}>
-        <Flex align="center" className={styles.imageWrapper}>
+        <Flex justify="center" align="center" className={styles.imageWrapper}>
           <Image src={data.image} alt={`изображение часов ${data.name}`} />
         </Flex>
 
-        <Card className={styles.cardInfo}>
+        <Card className={styles.card}>
           <Flex vertical gap={24}>
-            <Title level={2}>{data.name}</Title>
+            <Title level={2} className={styles.title}>
+              {data.name}
+            </Title>
 
             <Flex gap={12}>
               <Tag className={styles.tag}>{data.country}</Tag>
@@ -58,10 +60,6 @@ export default function Product({ data }: ProductProps) {
           </Flex>
         </Card>
       </Flex>
-      <Card className={styles.cardDescription}>
-        <Title level={3}>Описание</Title>
-        <Paragraph className={styles.description}>{data.description}</Paragraph>
-      </Card>
     </>
   );
 }

@@ -5,6 +5,9 @@ export const THEME = {
       headerPadding: '0 24px',
       footerBg: '#fff',
     },
+    Button: {
+      fontWeight: 600,
+    },
   },
   token: {
     colorLink: '#007fbb',

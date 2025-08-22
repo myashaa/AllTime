@@ -1,8 +1,6 @@
 .card {
   display: flex;
   cursor: pointer;
-  border-radius: 16px;
-  box-shadow: 0 4px 20px rgb(0 0 0 / 8%);
   transition: all 0.3s ease;
 }
 
@@ -53,16 +51,4 @@
 
 .button {
   height: 40px;
-  font-weight: 600;
-  line-height: 0;
-  border-radius: 16px;
-  transition: all 0.2s ease;
-}
-
-.button:hover {
-  transform: translateY(-1px);
-}
-
-.button:active {
-  transform: translateY(0);
 }
