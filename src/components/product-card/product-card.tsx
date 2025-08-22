@@ -1,9 +1,11 @@
 import { useNavigate } from 'react-router';
+import { useTranslation } from 'react-i18next';
 import { Button, Card, Flex, Image, Typography } from 'antd';
 import { ShoppingCartOutlined } from '@ant-design/icons';
 import { AppRoute } from '~/const/route/app-route';
 import type { ProductData } from '~/const/mock';
 import ProductPrice from '~/components/product-price/product-price';
+import { NameSpaces } from '~/i18n/name-spaces';
 
 import styles from './product-card.module.css';
 
@@ -14,6 +16,8 @@ type ProductCardProps = {
 export default function ProductCard({ product }: ProductCardProps) {
   const { Paragraph, Title } = Typography;
   const navigate = useNavigate();
+
+  const { t } = useTranslation(NameSpaces.COMMON);
 
   const handleTitleClick = () => {
     navigate(`${AppRoute.ProductDetails}/${product.id}`);
@@ -49,7 +53,7 @@ export default function ProductCard({ product }: ProductCardProps) {
             className={styles.button}
             onClick={handleButtonClick}
           >
-            В корзину
+            {t('addToCart')}
           </Button>
         </Flex>
       </Flex>
