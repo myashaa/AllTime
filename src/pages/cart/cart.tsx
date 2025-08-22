@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router';
-import { Button, Card, Divider, Flex, Typography } from 'antd';
+import { Button, Card, Divider, Flex } from 'antd';
 import { ShoppingCartOutlined } from '@ant-design/icons';
 import LayoutBase from '~/layouts/base/base';
 import { AppRoute } from '~/const/route/app-route';
@@ -7,12 +7,11 @@ import BackLink from '~/components/back-link/back-link';
 import EmptyContent from '~/components/empty-content/empty-content';
 import { CATALOG } from '~/const/mock';
 import CartItem from '~/components/cart-item/cart-item';
+import OrderSummary from '~/components/order-summary/order-summary';
 
 import styles from './cart.module.css';
 
 export default function Cart() {
-  const { Text } = Typography;
-
   const navigate = useNavigate();
 
   const cartItems = CATALOG.slice(0, 2);
@@ -39,17 +38,7 @@ export default function Cart() {
 
           <Card>
             <Flex vertical gap={12}>
-              <Flex justify="space-between">
-                <Text>Товаров:</Text>
-                <Text strong>{totalItems} шт.</Text>
-              </Flex>
-
-              <Flex justify="space-between">
-                <Text>Итого:</Text>
-                <Text strong className={styles.totalPrice}>
-                  {totalAmount}&nbsp;&#8381;
-                </Text>
-              </Flex>
+              <OrderSummary totalItems={totalItems} totalAmount={totalAmount} />
 
               <Button
                 type="primary"

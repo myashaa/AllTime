@@ -1,0 +1,16 @@
+.wrapper {
+  padding: 24px;
+}
+
+@media (width <= 1300px) {
+  .wrapper {
+    padding: 24px 0;
+  }
+}
+
+@media (width <= 900px) {
+  .wrapper {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
