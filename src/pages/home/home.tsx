@@ -7,7 +7,7 @@ import { CATALOG } from '~/const/mock';
 import styles from './home.module.css';
 
 export default function Home() {
-  const pageSize = 12;
+  const pageSize = 10;
   const [currentPage, setCurrentPage] = useState<number>(1);
 
   const startIndex = (currentPage - 1) * pageSize;

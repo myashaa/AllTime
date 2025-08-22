@@ -1,6 +1,7 @@
-import { Flex } from 'antd';
 import type { ProductData } from '~/const/mock';
 import ProductCard from '~/components/product-card/product-card';
+
+import styles from './product-catalog.module.css';
 
 type ProductCatalogProps = {
   products: ProductData[];
@@ -8,10 +9,10 @@ type ProductCatalogProps = {
 
 export default function ProductCatalog({ products }: ProductCatalogProps) {
   return (
-    <Flex gap={20} wrap justify="center">
+    <div className={styles.catalog}>
       {products.map((p) => (
         <ProductCard key={p.id} product={p} />
       ))}
-    </Flex>
+    </div>
   );
 }

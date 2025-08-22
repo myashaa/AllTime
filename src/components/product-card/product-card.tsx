@@ -26,7 +26,7 @@ export default function ProductCard({ product }: ProductCardProps) {
 
   return (
     <Card className={styles.card} onClick={handleTitleClick}>
-      <Flex vertical align="center">
+      <Flex vertical align="center" className={styles.wrapper}>
         <div className={styles.imageWrapper}>
           <Image src={product.image} alt={`изображение часов ${product.name}`} preview={false} height={270} />
         </div>

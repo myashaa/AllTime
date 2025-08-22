@@ -1,6 +1,5 @@
 .card {
-  width: 260px;
-  padding: 8px;
+  display: flex;
   cursor: pointer;
   border-radius: 16px;
   box-shadow: 0 4px 20px rgb(0 0 0 / 8%);
@@ -10,6 +9,10 @@
 .card:hover {
   box-shadow: 0 12px 40px rgb(0 0 0 / 12%);
   transform: translateY(-2px);
+}
+
+.wrapper {
+  height: 100%;
 }
 
 .imageWrapper {
@@ -22,14 +25,10 @@
 }
 
 .card .title {
-  display: -webkit-box;
   margin-bottom: 8px;
-  overflow: hidden;
-  -webkit-line-clamp: 1;
   font-size: 18px;
   font-weight: 700;
   text-align: center;
-  -webkit-box-orient: vertical;
 }
 
 .description {
@@ -43,6 +42,7 @@
 
 .priceWrapper {
   width: 100%;
+  margin-top: auto;
 }
 
 .price {
