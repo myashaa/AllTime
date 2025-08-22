@@ -2,7 +2,11 @@ export const THEME = {
   components: {
     Layout: {
       headerBg: '#fff',
+      headerPadding: '0 24px',
       footerBg: '#fff',
+    },
+    Button: {
+      fontWeight: 600,
     },
   },
   token: {

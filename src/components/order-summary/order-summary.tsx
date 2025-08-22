@@ -1,4 +1,5 @@
 import { Flex, Typography } from 'antd';
+import ProductPrice from '~/components/product-price/product-price';
 
 import styles from './order-summary.module.css';
 
@@ -19,9 +20,7 @@ export default function OrderSummary({ totalItems, totalAmount }: OrderSummaryPr
 
       <Flex justify="space-between">
         <Text>Итого:</Text>
-        <Text strong className={styles.totalPrice}>
-          {totalAmount}&nbsp;&#8381;
-        </Text>
+        <ProductPrice price={totalAmount} className={styles.totalPrice} />
       </Flex>
     </>
   );

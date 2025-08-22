@@ -1,6 +1,7 @@
 import { Button, Card, Flex, Image, Typography, Tag, Divider } from 'antd';
 import { ShoppingCartOutlined } from '@ant-design/icons';
 import type { ProductData } from '~/const/mock';
+import ProductPrice from '~/components/product-price/product-price';
 
 import styles from './product.module.css';
 
@@ -18,13 +19,15 @@ export default function Product({ data }: ProductProps) {
   return (
     <>
       <Flex gap={48} justify="space-between" className={styles.wrapper}>
-        <Flex align="center" className={styles.imageWrapper}>
+        <Flex justify="center" align="center" className={styles.imageWrapper}>
           <Image src={data.image} alt={`изображение часов ${data.name}`} />
         </Flex>
 
-        <Card className={styles.cardInfo}>
+        <Card className={styles.card}>
           <Flex vertical gap={24}>
-            <Title level={2}>{data.name}</Title>
+            <Title level={2} className={styles.title}>
+              {data.name}
+            </Title>
 
             <Flex gap={12}>
               <Tag className={styles.tag}>{data.country}</Tag>
@@ -41,10 +44,7 @@ export default function Product({ data }: ProductProps) {
             <Divider />
 
             <Flex justify="space-between" align="center" className={styles.priceWrapper}>
-              <Text className={styles.price}>
-                {data.price}
-                &nbsp;&#8381;
-              </Text>
+              <ProductPrice price={data.price} className={styles.price} />
               <Button
                 type="primary"
                 size="large"
@@ -58,10 +58,6 @@ export default function Product({ data }: ProductProps) {
           </Flex>
         </Card>
       </Flex>
-      <Card className={styles.cardDescription}>
-        <Title level={3}>Описание</Title>
-        <Paragraph className={styles.description}>{data.description}</Paragraph>
-      </Card>
     </>
   );
 }

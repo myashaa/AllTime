@@ -3,6 +3,7 @@ import { Button, Card, Flex, Image, Typography } from 'antd';
 import { ShoppingCartOutlined } from '@ant-design/icons';
 import { AppRoute } from '~/const/route/app-route';
 import type { ProductData } from '~/const/mock';
+import ProductPrice from '~/components/product-price/product-price';
 
 import styles from './product-card.module.css';
 
@@ -11,7 +12,7 @@ type ProductCardProps = {
 };
 
 export default function ProductCard({ product }: ProductCardProps) {
-  const { Text, Paragraph, Title } = Typography;
+  const { Paragraph, Title } = Typography;
   const navigate = useNavigate();
 
   const handleTitleClick = () => {
@@ -26,7 +27,7 @@ export default function ProductCard({ product }: ProductCardProps) {
 
   return (
     <Card className={styles.card} onClick={handleTitleClick}>
-      <Flex vertical align="center">
+      <Flex vertical align="center" className={styles.wrapper}>
         <div className={styles.imageWrapper}>
           <Image src={product.image} alt={`изображение часов ${product.name}`} preview={false} height={270} />
         </div>
@@ -40,10 +41,7 @@ export default function ProductCard({ product }: ProductCardProps) {
         </Paragraph>
 
         <Flex justify="space-between" align="center" className={styles.priceWrapper}>
-          <Text className={styles.price}>
-            {product.price}
-            &nbsp;&#8381;
-          </Text>
+          <ProductPrice price={product.price} className={styles.price} />
           <Button
             color="primary"
             variant="outlined"

@@ -1,6 +1,7 @@
 import { Button, Card, Flex, Image, Typography } from 'antd';
 import { DeleteOutlined, MinusOutlined, PlusOutlined } from '@ant-design/icons';
 import type { ProductData } from '~/const/mock';
+import ProductPrice from '~/components/product-price/product-price';
 
 import styles from './cart-item.module.css';
 
@@ -26,7 +27,7 @@ export default function CartItem({ data }: CartItemProps) {
               {data.name}
             </Title>
             <Text type="secondary">{data.article}</Text>
-            <Text strong>{data.price}&nbsp;&#8381;</Text>
+            <ProductPrice price={data.price} />
           </Flex>
 
           <Flex align="center" gap={8}>
