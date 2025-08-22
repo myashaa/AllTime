@@ -1,12 +1,16 @@
+import { useTranslation } from 'react-i18next';
 import { Card, Divider, Flex, Typography } from 'antd';
 import { CATALOG } from '~/const/mock';
 import OrderSummary from '~/components/order-summary/order-summary';
 import ProductPrice from '~/components/product-price/product-price';
+import { NameSpaces } from '~/i18n/name-spaces';
 
 import styles from './order-card.module.css';
 
 export default function OrderCard() {
   const { Title, Text } = Typography;
+
+  const { t } = useTranslation(NameSpaces.ORDER);
 
   const cartItems = CATALOG.slice(0, 2);
   const totalItems = 10;
@@ -16,7 +20,7 @@ export default function OrderCard() {
   return (
     <Card className={styles.card}>
       <Title level={2} className={styles.title}>
-        Ваш заказ
+        {t('yourOrder')}
       </Title>
 
       {cartItems.map((i) => (

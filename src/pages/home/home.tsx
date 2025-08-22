@@ -1,12 +1,16 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Flex, Pagination } from 'antd';
 import LayoutBase from '~/layouts/base/base';
 import ProductCatalog from '~/components/product-catalog/product-catalog';
 import { CATALOG } from '~/const/mock';
+import { NameSpaces } from '~/i18n/name-spaces';
 
 import styles from './home.module.css';
 
 export default function Home() {
+  const { t } = useTranslation(NameSpaces.COMMON);
+
   const pageSize = 10;
   const [currentPage, setCurrentPage] = useState<number>(1);
 
@@ -19,7 +23,7 @@ export default function Home() {
   };
 
   return (
-    <LayoutBase title="Главная">
+    <LayoutBase title={t('pageTitle.home')}>
       <ProductCatalog products={currentProducts} />
 
       <Flex justify="center" className={styles.paginationWrapper}>

@@ -1,3 +1,17 @@
 {
-  "addToCart": "Add to cart"
+  "logo": "logo",
+  "returnToCatalog": "Return to catalog",
+  "returnToHome": "Return to home",
+  "addToCart": "Add to cart",
+  "yourCartIsEmpty": "Your cart is empty",
+  "placeAnOrder": "Place an order",
+  "pageNotFound": "Page not found",
+  "productNotFound": "Product not found",
+  "pageTitle": {
+    "cart": "Cart",
+    "checkout": "Checkout",
+    "home": "Home",
+    "pageNotFound": "Page not found",
+    "productDetails": "Product details"
+  }
 }

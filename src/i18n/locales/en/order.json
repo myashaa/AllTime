@@ -1,0 +1,15 @@
+{
+  "yourOrder": "Your order",
+  "orderDetails": "Order details",
+  "name": "Name",
+  "enterYourName": "Enter your name",
+  "surname": "Surname",
+  "enterYourSurname": "Enter your surname",
+  "phone": "Phone",
+  "confirmOrder": "Confirm order",
+  "orderSuccess": "The order has been successfully completed!",
+  "thanksForYourPurchase": "Thank you for your purchase. You will be redirected to the main page soon.",
+  "numberOfProducts": "Products",
+  "unitsOfMeasurement": "",
+  "total": "Total"
+}

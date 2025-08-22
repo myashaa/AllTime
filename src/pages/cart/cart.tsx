@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router';
+import { useTranslation } from 'react-i18next';
 import { Button, Card, Divider, Flex } from 'antd';
 import { ShoppingCartOutlined } from '@ant-design/icons';
 import LayoutBase from '~/layouts/base/base';
@@ -8,11 +9,14 @@ import EmptyContent from '~/components/empty-content/empty-content';
 import { CATALOG } from '~/const/mock';
 import CartItem from '~/components/cart-item/cart-item';
 import OrderSummary from '~/components/order-summary/order-summary';
+import { NameSpaces } from '~/i18n/name-spaces';
 
 import styles from './cart.module.css';
 
 export default function Cart() {
   const navigate = useNavigate();
+
+  const { t } = useTranslation(NameSpaces.COMMON);
 
   const cartItems = CATALOG.slice(0, 2);
   const totalItems = 10;
@@ -23,11 +27,11 @@ export default function Cart() {
   };
 
   return (
-    <LayoutBase title="Корзина">
+    <LayoutBase title={t('pageTitle.cart')}>
       <BackLink />
 
       {cartItems.length === 0 ? (
-        <EmptyContent description="Ваша корзина пуста" />
+        <EmptyContent description={t('yourCartIsEmpty')} />
       ) : (
         <Flex vertical gap={16} className={styles.wrapper}>
           {cartItems.map((i) => (
@@ -46,7 +50,7 @@ export default function Cart() {
                 onClick={handleButtonClick}
                 className={styles.button}
               >
-                Оформить заказ
+                {t('placeAnOrder')}
               </Button>
             </Flex>
           </Card>

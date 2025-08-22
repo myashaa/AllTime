@@ -1,0 +1,15 @@
+{
+  "yourOrder": "Ваш заказ",
+  "orderDetails": "Данные для заказа",
+  "name": "Имя",
+  "enterYourName": "Введите ваше имя",
+  "surname": "Фамилия",
+  "enterYourSurname": "Введите вашу фамилию",
+  "phone": "Номер телефона",
+  "confirmOrder": "Подтвердить заказ",
+  "orderSuccess": "Заказ успешно оформлен!",
+  "thanksForYourPurchase": "Спасибо за покупку. Скоро вы будете перенаправлены на главную страницу.",
+  "numberOfProducts": "Товаров",
+  "unitsOfMeasurement": "шт.",
+  "total": "Итого"
+}

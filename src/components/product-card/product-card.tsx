@@ -17,7 +17,8 @@ export default function ProductCard({ product }: ProductCardProps) {
   const { Paragraph, Title } = Typography;
   const navigate = useNavigate();
 
-  const { t } = useTranslation(NameSpaces.COMMON);
+  const { t: tCommon } = useTranslation(NameSpaces.COMMON);
+  const { t: tProduct } = useTranslation(NameSpaces.PRODUCT);
 
   const handleTitleClick = () => {
     navigate(`${AppRoute.ProductDetails}/${product.id}`);
@@ -33,7 +34,7 @@ export default function ProductCard({ product }: ProductCardProps) {
     <Card className={styles.card} onClick={handleTitleClick}>
       <Flex vertical align="center" className={styles.wrapper}>
         <div className={styles.imageWrapper}>
-          <Image src={product.image} alt={`изображение часов ${product.name}`} preview={false} height={270} />
+          <Image src={product.image} alt={`${tProduct('image')} ${product.name}`} preview={false} height={270} />
         </div>
 
         <Title level={2} className={styles.title}>
@@ -53,7 +54,7 @@ export default function ProductCard({ product }: ProductCardProps) {
             className={styles.button}
             onClick={handleButtonClick}
           >
-            {t('addToCart')}
+            {tCommon('addToCart')}
           </Button>
         </Flex>
       </Flex>
