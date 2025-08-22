@@ -1,27 +1,32 @@
+import { useEffect, useState } from 'react';
 import { Button, Form } from 'antd';
 
 type FormSubmitButtonProps = {
   text: string;
   isLoading?: boolean;
-  isDisabled?: boolean;
   className?: string;
   style?: React.CSSProperties;
 };
 
-export default function FormSubmitButton({
-  text,
-  isLoading = false,
-  isDisabled = false,
-  className,
-  style,
-}: FormSubmitButtonProps) {
+export default function FormSubmitButton({ text, isLoading = false, className, style }: FormSubmitButtonProps) {
+  const form = Form.useFormInstance();
+  const [submittable, setSubmittable] = useState<boolean>(false);
+  const values = Form.useWatch([], form);
+
+  useEffect(() => {
+    form
+      .validateFields({ validateOnly: true })
+      .then(() => setSubmittable(true))
+      .catch(() => setSubmittable(false));
+  }, [form, values]);
+
   return (
     <Form.Item>
       <Button
         type="primary"
         htmlType="submit"
         loading={isLoading}
-        disabled={isDisabled}
+        disabled={!submittable}
         className={className}
         style={style}
       >
