@@ -8,12 +8,11 @@ type FormInputProps = {
   placeholder: string;
   rules?: Rule[];
   className?: string;
-  style?: React.CSSProperties;
 };
 
-export default function FormInput({ name, label, placeholder, rules = [], className, style }: FormInputProps) {
+export default function FormInput({ name, label, placeholder, rules = [], className }: FormInputProps) {
   return (
-    <Form.Item name={name} label={label} rules={rules} className={className} style={style}>
+    <Form.Item name={name} label={label} rules={rules} className={className}>
       <Input placeholder={placeholder} />
     </Form.Item>
   );

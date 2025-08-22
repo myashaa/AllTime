@@ -1,6 +1,7 @@
 import { Button, Card, Flex, Image, Typography, Tag, Divider } from 'antd';
 import { ShoppingCartOutlined } from '@ant-design/icons';
 import type { ProductData } from '~/const/mock';
+import ProductPrice from '~/components/product-price/product-price';
 
 import styles from './product.module.css';
 
@@ -43,10 +44,7 @@ export default function Product({ data }: ProductProps) {
             <Divider />
 
             <Flex justify="space-between" align="center" className={styles.priceWrapper}>
-              <Text className={styles.price}>
-                {data.price}
-                &nbsp;&#8381;
-              </Text>
+              <ProductPrice price={data.price} className={styles.price} />
               <Button
                 type="primary"
                 size="large"

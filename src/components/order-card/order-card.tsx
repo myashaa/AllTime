@@ -1,6 +1,7 @@
 import { Card, Divider, Flex, Typography } from 'antd';
 import { CATALOG } from '~/const/mock';
 import OrderSummary from '~/components/order-summary/order-summary';
+import ProductPrice from '~/components/product-price/product-price';
 
 import styles from './order-card.module.css';
 
@@ -23,10 +24,10 @@ export default function OrderCard() {
           <Flex vertical>
             <Text className={styles.productName}>{i.name}</Text>
             <Text type="secondary">
-              {quantity}&nbsp;&times;&nbsp;{i.price}&nbsp;&#8381;
+              {quantity}&nbsp;&times;&nbsp;{i.price}
             </Text>
           </Flex>
-          <Text className={styles.productPrice}>{quantity * i.price}&nbsp;&#8381;</Text>
+          <ProductPrice price={quantity * i.price} className={styles.productPrice} />
         </Flex>
       ))}
 

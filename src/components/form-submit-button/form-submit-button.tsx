@@ -5,10 +5,9 @@ type FormSubmitButtonProps = {
   text: string;
   isLoading?: boolean;
   className?: string;
-  style?: React.CSSProperties;
 };
 
-export default function FormSubmitButton({ text, isLoading = false, className, style }: FormSubmitButtonProps) {
+export default function FormSubmitButton({ text, isLoading = false, className }: FormSubmitButtonProps) {
   const form = Form.useFormInstance();
   const [submittable, setSubmittable] = useState<boolean>(false);
   const values = Form.useWatch([], form);
@@ -22,14 +21,7 @@ export default function FormSubmitButton({ text, isLoading = false, className, s
 
   return (
     <Form.Item>
-      <Button
-        type="primary"
-        htmlType="submit"
-        loading={isLoading}
-        disabled={!submittable}
-        className={className}
-        style={style}
-      >
+      <Button type="primary" htmlType="submit" loading={isLoading} disabled={!submittable} className={className}>
         {text}
       </Button>
     </Form.Item>
