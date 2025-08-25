@@ -1,10 +1,9 @@
 import { useTranslation } from 'react-i18next';
-import { Button, Card, Flex, Image, Typography, Tag, Divider } from 'antd';
-import { ShoppingCartOutlined } from '@ant-design/icons';
+import { Card, Flex, Image, Typography, Tag, Divider } from 'antd';
 import ProductPrice from '~/components/product-price/product-price';
 import { NameSpaces } from '~/i18n/name-spaces';
-import { useAppStore } from '~/store';
 import type { Product } from '~/types/product';
+import ShoppingButton from '~/components/shopping-button/form-input';
 
 import styles from './product.module.css';
 
@@ -15,20 +14,13 @@ type ProductProps = {
 export default function Product({ data }: ProductProps) {
   const { Text, Paragraph, Title } = Typography;
 
-  const { t: tCommon } = useTranslation(NameSpaces.COMMON);
-  const { t: tProduct } = useTranslation(NameSpaces.PRODUCT);
-
-  const addToCart = useAppStore((state) => state.cart.addToCart);
-
-  const handleButtonClick = () => {
-    addToCart(data.id);
-  };
+  const { t } = useTranslation(NameSpaces.PRODUCT);
 
   return (
     <>
       <Flex gap={48} justify="space-between" className={styles.wrapper}>
         <Flex justify="center" align="center" className={styles.imageWrapper}>
-          <Image src={data.image} alt={`${tProduct('image')} ${data.name}`} />
+          <Image src={data.image} alt={`${t('image')} ${data.name}`} />
         </Flex>
 
         <Card className={styles.card}>
@@ -44,10 +36,10 @@ export default function Product({ data }: ProductProps) {
 
             <Flex vertical gap={4} className={styles.characteristic}>
               <Text type="secondary">
-                {tProduct('article')}: {data.article}
+                {t('article')}: {data.article}
               </Text>
               <Text type="secondary">
-                {tProduct('typeOfMechanism')}: {data.typeOfMechanism}
+                {t('typeOfMechanism')}: {data.typeOfMechanism}
               </Text>
             </Flex>
 
@@ -57,15 +49,7 @@ export default function Product({ data }: ProductProps) {
 
             <Flex justify="space-between" align="center" className={styles.priceWrapper}>
               <ProductPrice price={data.price} className={styles.price} />
-              <Button
-                type="primary"
-                size="large"
-                icon={<ShoppingCartOutlined />}
-                className={styles.button}
-                onClick={handleButtonClick}
-              >
-                {tCommon('addToCart')}
-              </Button>
+              <ShoppingButton productId={data.id} type="primary" size="large" className={styles.button} />
             </Flex>
           </Flex>
         </Card>
