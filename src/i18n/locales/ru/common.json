@@ -1,0 +1,17 @@
+{
+  "logo": "логотип",
+  "returnToCatalog": "Вернуться в каталог",
+  "returnToHome": "Вернуться на главную",
+  "addToCart": "В корзину",
+  "yourCartIsEmpty": "Ваша корзина пуста",
+  "placeAnOrder": "Оформить заказ",
+  "pageNotFound": "Страница не найдена",
+  "productNotFound": "Товар не найден",
+  "pageTitle": {
+    "cart": "Корзина",
+    "checkout": "Оформление заказа",
+    "home": "Главная",
+    "pageNotFound": "Страница не найдена",
+    "productDetails": "Детальная"
+  }
+}

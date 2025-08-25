@@ -1,7 +1,9 @@
+import { useTranslation } from 'react-i18next';
 import { Button, Card, Flex, Image, Typography } from 'antd';
 import { DeleteOutlined, MinusOutlined, PlusOutlined } from '@ant-design/icons';
 import type { ProductData } from '~/const/mock';
 import ProductPrice from '~/components/product-price/product-price';
+import { NameSpaces } from '~/i18n/name-spaces';
 
 import styles from './cart-item.module.css';
 
@@ -12,13 +14,15 @@ type CartItemProps = {
 export default function CartItem({ data }: CartItemProps) {
   const { Title, Text } = Typography;
 
+  const { t } = useTranslation(NameSpaces.PRODUCT);
+
   const quantity = 2;
 
   return (
     <Card>
       <Flex gap={24} align="center" className={styles.card}>
         <div className={styles.imageWrapper}>
-          <Image src={data.image} alt={`изображение часов ${data.name}`} preview={false} />
+          <Image src={data.image} alt={`${t('image')} ${data.name}`} preview={false} />
         </div>
 
         <Flex gap={32} className={styles.info}>

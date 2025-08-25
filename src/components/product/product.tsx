@@ -1,7 +1,9 @@
+import { useTranslation } from 'react-i18next';
 import { Button, Card, Flex, Image, Typography, Tag, Divider } from 'antd';
 import { ShoppingCartOutlined } from '@ant-design/icons';
 import type { ProductData } from '~/const/mock';
 import ProductPrice from '~/components/product-price/product-price';
+import { NameSpaces } from '~/i18n/name-spaces';
 
 import styles from './product.module.css';
 
@@ -12,6 +14,9 @@ type ProductProps = {
 export default function Product({ data }: ProductProps) {
   const { Text, Paragraph, Title } = Typography;
 
+  const { t: tCommon } = useTranslation(NameSpaces.COMMON);
+  const { t: tProduct } = useTranslation(NameSpaces.PRODUCT);
+
   const handleButtonClick = () => {
     // TODO: добавить логику
   };
@@ -20,7 +25,7 @@ export default function Product({ data }: ProductProps) {
     <>
       <Flex gap={48} justify="space-between" className={styles.wrapper}>
         <Flex justify="center" align="center" className={styles.imageWrapper}>
-          <Image src={data.image} alt={`изображение часов ${data.name}`} />
+          <Image src={data.image} alt={`${tProduct('image')} ${data.name}`} />
         </Flex>
 
         <Card className={styles.card}>
@@ -35,8 +40,12 @@ export default function Product({ data }: ProductProps) {
             </Flex>
 
             <Flex vertical gap={4} className={styles.characteristic}>
-              <Text type="secondary">Артикул: {data.article}</Text>
-              <Text type="secondary">Тип механизма: {data.typeOfMechanism}</Text>
+              <Text type="secondary">
+                {tProduct('article')}: {data.article}
+              </Text>
+              <Text type="secondary">
+                {tProduct('typeOfMechanism')}: {data.typeOfMechanism}
+              </Text>
             </Flex>
 
             <Paragraph className={styles.description}>{data.description}</Paragraph>
@@ -52,7 +61,7 @@ export default function Product({ data }: ProductProps) {
                 className={styles.button}
                 onClick={handleButtonClick}
               >
-                В корзину
+                {tCommon('addToCart')}
               </Button>
             </Flex>
           </Flex>

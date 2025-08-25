@@ -1,9 +1,11 @@
 import { useNavigate } from 'react-router';
+import { useTranslation } from 'react-i18next';
 import { Button, Card, Flex, Image, Typography } from 'antd';
 import { ShoppingCartOutlined } from '@ant-design/icons';
 import { AppRoute } from '~/const/route/app-route';
 import type { ProductData } from '~/const/mock';
 import ProductPrice from '~/components/product-price/product-price';
+import { NameSpaces } from '~/i18n/name-spaces';
 
 import styles from './product-card.module.css';
 
@@ -14,6 +16,9 @@ type ProductCardProps = {
 export default function ProductCard({ product }: ProductCardProps) {
   const { Paragraph, Title } = Typography;
   const navigate = useNavigate();
+
+  const { t: tCommon } = useTranslation(NameSpaces.COMMON);
+  const { t: tProduct } = useTranslation(NameSpaces.PRODUCT);
 
   const handleTitleClick = () => {
     navigate(`${AppRoute.ProductDetails}/${product.id}`);
@@ -29,7 +34,7 @@ export default function ProductCard({ product }: ProductCardProps) {
     <Card className={styles.card} onClick={handleTitleClick}>
       <Flex vertical align="center" className={styles.wrapper}>
         <div className={styles.imageWrapper}>
-          <Image src={product.image} alt={`изображение часов ${product.name}`} preview={false} height={270} />
+          <Image src={product.image} alt={`${tProduct('image')} ${product.name}`} preview={false} height={270} />
         </div>
 
         <Title level={2} className={styles.title}>
@@ -49,7 +54,7 @@ export default function ProductCard({ product }: ProductCardProps) {
             className={styles.button}
             onClick={handleButtonClick}
           >
-            В корзину
+            {tCommon('addToCart')}
           </Button>
         </Flex>
       </Flex>
