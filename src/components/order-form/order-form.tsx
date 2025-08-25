@@ -7,16 +7,18 @@ import FormInput from '~/components/form-input/form-input';
 import FormSubmitButton from '~/components/form-submit-button/form-submit-button';
 import { getFormRules } from '~/helpers/form';
 import { NameSpaces } from '~/i18n/name-spaces';
+import { useAppStore } from '~/store';
 
 import styles from './order-form.module.css';
 
 export default function OrderForm() {
+  const navigate = useNavigate();
   const { Title } = Typography;
 
   const { t, i18n } = useTranslation(NameSpaces.ORDER);
   const formRules = getFormRules(t);
 
-  const navigate = useNavigate();
+  const clearCart = useAppStore((state) => state.cart.clearCart);
 
   const [form] = Form.useForm();
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
@@ -32,6 +34,7 @@ export default function OrderForm() {
 
     // TODO: добавить логику
 
+    clearCart();
     setTimeout(() => {
       navigate(AppRoute.Home);
     }, 2000);

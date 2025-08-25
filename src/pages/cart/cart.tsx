@@ -6,10 +6,11 @@ import LayoutBase from '~/layouts/base/base';
 import { AppRoute } from '~/const/route/app-route';
 import BackLink from '~/components/back-link/back-link';
 import EmptyContent from '~/components/empty-content/empty-content';
-import { CATALOG } from '~/const/mock';
+import { useAppStore } from '~/store';
 import CartItem from '~/components/cart-item/cart-item';
 import OrderSummary from '~/components/order-summary/order-summary';
 import { NameSpaces } from '~/i18n/name-spaces';
+import { getCartProducts } from '~/helpers/product';
 
 import styles from './cart.module.css';
 
@@ -18,9 +19,11 @@ export default function Cart() {
 
   const { t } = useTranslation(NameSpaces.COMMON);
 
-  const cartItems = CATALOG.slice(0, 2);
-  const totalItems = 10;
-  const totalAmount = 100000;
+  const cartItems = useAppStore((state) => state.cart.items);
+  const products = useAppStore((state) => state.catalog.products);
+  const items = getCartProducts(cartItems, products);
+  const totalItems = useAppStore((state) => state.cart.getTotalItems());
+  const totalAmount = useAppStore((state) => state.cart.getTotalAmount());
 
   const handleButtonClick = () => {
     navigate(AppRoute.Checkout);
@@ -30,11 +33,11 @@ export default function Cart() {
     <LayoutBase title={t('pageTitle.cart')}>
       <BackLink />
 
-      {cartItems.length === 0 ? (
+      {items.length === 0 ? (
         <EmptyContent description={t('yourCartIsEmpty')} />
       ) : (
         <Flex vertical gap={16} className={styles.wrapper}>
-          {cartItems.map((i) => (
+          {items.map((i) => (
             <CartItem key={i.id} data={i} />
           ))}
 

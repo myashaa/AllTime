@@ -6,6 +6,7 @@ import { AppRoute } from '~/const/route/app-route';
 import logo from '~/assets/logo.svg';
 import LangSwitcher from '~/components/lang-switcher/lang-switcher';
 import { NameSpaces } from '~/i18n/name-spaces';
+import { useAppStore } from '~/store';
 
 import styles from './header.module.css';
 
@@ -14,8 +15,8 @@ export default function Header() {
 
   const { t } = useTranslation(NameSpaces.COMMON);
 
-  const cartCount = 10;
-  const cartMaxCount = 9;
+  const totalItems = useAppStore((state) => state.cart.getTotalItems());
+  const maxVisibleAmount = 9;
 
   return (
     <Header>
@@ -28,7 +29,7 @@ export default function Header() {
           <LangSwitcher />
 
           <Link to={AppRoute.Cart}>
-            <Badge count={cartCount} overflowCount={cartMaxCount} showZero={false}>
+            <Badge count={totalItems} overflowCount={maxVisibleAmount} showZero={false}>
               <Button type="primary" shape="circle" icon={<ShoppingOutlined />} />
             </Badge>
           </Link>

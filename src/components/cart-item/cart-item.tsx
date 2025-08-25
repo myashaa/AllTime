@@ -1,14 +1,15 @@
 import { useTranslation } from 'react-i18next';
 import { Button, Card, Flex, Image, Typography } from 'antd';
 import { DeleteOutlined, MinusOutlined, PlusOutlined } from '@ant-design/icons';
-import type { ProductData } from '~/const/mock';
+import type { ProductWithQuantity } from '~/types/product';
 import ProductPrice from '~/components/product-price/product-price';
 import { NameSpaces } from '~/i18n/name-spaces';
+import { useAppStore } from '~/store';
 
 import styles from './cart-item.module.css';
 
 type CartItemProps = {
-  data: ProductData;
+  data: ProductWithQuantity;
 };
 
 export default function CartItem({ data }: CartItemProps) {
@@ -16,7 +17,9 @@ export default function CartItem({ data }: CartItemProps) {
 
   const { t } = useTranslation(NameSpaces.PRODUCT);
 
-  const quantity = 2;
+  const incrementQuantity = useAppStore((state) => state.cart.incrementCartItemQuantity);
+  const decrementQuantity = useAppStore((state) => state.cart.decrementCartItemQuantity);
+  const removeFromCart = useAppStore((state) => state.cart.removeFromCart);
 
   return (
     <Card>
@@ -38,24 +41,19 @@ export default function CartItem({ data }: CartItemProps) {
             <Button
               type="text"
               shape="circle"
-              disabled={quantity === 1}
+              disabled={data.quantity === 1}
               icon={<MinusOutlined />}
-              // TODO: onClick={}
+              onClick={() => decrementQuantity(data.id)}
             />
-            <Text className={styles.quantity}>{quantity}</Text>
-            <Button
-              type="text"
-              shape="circle"
-              icon={<PlusOutlined />}
-              // TODO: onClick={}
-            />
+            <Text className={styles.quantity}>{data.quantity}</Text>
+            <Button type="text" shape="circle" icon={<PlusOutlined />} onClick={() => incrementQuantity(data.id)} />
 
             <Button
               type="text"
               shape="circle"
               danger
               icon={<DeleteOutlined />}
-              // TODO: onClick={}
+              onClick={() => removeFromCart(data.id)}
             />
           </Flex>
         </Flex>
