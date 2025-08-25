@@ -11,5 +11,25 @@
   "thanksForYourPurchase": "Thank you for your purchase. You will be redirected to the main page soon.",
   "numberOfProducts": "Products",
   "unitsOfMeasurement": "",
-  "total": "Total"
+  "total": "Total",
+  "form" : {
+    "rules": {
+      "name": {
+        "required": "Please enter a name",
+        "pattern": "The name must not contain numbers or special characters"
+      },
+      "surname": {
+        "required": "Please enter a surname",
+        "pattern": "The surname must not contain numbers or special characters"
+      },
+      "email": {
+        "required": "Please enter a email",
+        "type": "Please enter a valid email address"
+      },
+      "phone": {
+        "required": "Please enter a phone number",
+        "pattern": "Please enter a valid phone number"
+      }
+    }
+  }
 }
