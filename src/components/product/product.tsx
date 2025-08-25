@@ -1,14 +1,15 @@
 import { useTranslation } from 'react-i18next';
 import { Button, Card, Flex, Image, Typography, Tag, Divider } from 'antd';
 import { ShoppingCartOutlined } from '@ant-design/icons';
-import type { ProductData } from '~/const/mock';
 import ProductPrice from '~/components/product-price/product-price';
 import { NameSpaces } from '~/i18n/name-spaces';
+import { useAppStore } from '~/store';
+import type { Product } from '~/types/product';
 
 import styles from './product.module.css';
 
 type ProductProps = {
-  data: ProductData;
+  data: Product;
 };
 
 export default function Product({ data }: ProductProps) {
@@ -17,8 +18,10 @@ export default function Product({ data }: ProductProps) {
   const { t: tCommon } = useTranslation(NameSpaces.COMMON);
   const { t: tProduct } = useTranslation(NameSpaces.PRODUCT);
 
+  const addToCart = useAppStore((state) => state.cart.addToCart);
+
   const handleButtonClick = () => {
-    // TODO: добавить логику
+    addToCart(data.id);
   };
 
   return (
