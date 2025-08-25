@@ -3,7 +3,7 @@ import { Card, Flex, Image, Typography, Tag, Divider } from 'antd';
 import ProductPrice from '~/components/product-price/product-price';
 import { NameSpaces } from '~/i18n/name-spaces';
 import type { Product } from '~/types/product';
-import ShoppingButton from '~/components/shopping-button/form-input';
+import ShoppingButton from '~/components/shopping-button/shopping-button';
 
 import styles from './product.module.css';
 

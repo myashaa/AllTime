@@ -5,7 +5,7 @@ import { AppRoute } from '~/const/route/app-route';
 import type { Product } from '~/types/product';
 import ProductPrice from '~/components/product-price/product-price';
 import { NameSpaces } from '~/i18n/name-spaces';
-import ShoppingButton from '~/components/shopping-button/form-input';
+import ShoppingButton from '~/components/shopping-button/shopping-button';
 
 import styles from './product-card.module.css';
 
