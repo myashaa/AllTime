@@ -1,16 +1,5 @@
 import { CATALOG } from '~/const/mock';
-
-type Product = {
-  id: number;
-  name: string;
-  description: string;
-  price: number;
-  image: string;
-  article: string;
-  country: string;
-  gender: string;
-  typeOfMechanism: string;
-};
+import type { Product } from '~/types/product';
 
 type CatalogState = {
   products: Product[];

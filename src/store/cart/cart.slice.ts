@@ -1,7 +1,4 @@
-type CartItem = {
-  productId: number;
-  quantity: number;
-};
+import type { CartItem } from '~/types/cart';
 
 type CartState = {
   items: CartItem[];
@@ -28,28 +25,38 @@ export const createCartSlice = (set, get) => ({
   addToCart: (productId) =>
     set((state) => ({
       cart: {
+        ...state.cart,
         items: [...state.cart.items, { productId, quantity: 1 }],
       },
     })),
   removeFromCart: (productId) =>
     set((state) => ({
       cart: {
+        ...state.cart,
         items: state.cart.items.filter((i) => i.productId !== productId),
       },
     })),
   incrementCartItemQuantity: (productId) =>
     set((state) => ({
       cart: {
+        ...state.cart,
         items: state.cart.items.map((i) => (i.productId === productId ? { ...i, quantity: i.quantity + 1 } : i)),
       },
     })),
   decrementCartItemQuantity: (productId) =>
     set((state) => ({
       cart: {
+        ...state.cart,
         items: state.cart.items.map((i) => (i.productId === productId ? { ...i, quantity: i.quantity - 1 } : i)),
       },
     })),
-  clearCart: () => set(initialState),
+  clearCart: () =>
+    set((state) => ({
+      cart: {
+        ...state.cart,
+        ...initialState,
+      },
+    })),
   getTotalItems: () => {
     const currentState = get().cart;
     return currentState.items.reduce((total, i) => total + i.quantity, 0);
